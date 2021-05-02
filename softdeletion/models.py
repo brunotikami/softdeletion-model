@@ -22,6 +22,7 @@ This usually won’t be exposed to users, but could only be called by developers
 [0] https://adriennedomingus.medium.com/soft-deletion-in-django-e4882581c340
 [1] https://docs.djangoproject.com/en/1.11/topics/db/models/#abstract-base-classes
 """
+from dateteim import datetime
 
 from django.db import models
 
