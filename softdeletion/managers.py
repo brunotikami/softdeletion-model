@@ -16,6 +16,8 @@ The pieces:
 [0] https://adriennedomingus.medium.com/soft-deletion-in-django-e4882581c340
 """
 
+from django.db import models
+
 from softdeletion.querysets import SoftDeletionQuerySet
 
 
