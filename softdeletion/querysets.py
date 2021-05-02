@@ -14,6 +14,7 @@ The pieces:
 
 from datetime import datetime
 
+from django.db.models.query import QuerySet
 
 class SoftDeletionQuerySet(QuerySet):
     def delete(self):
