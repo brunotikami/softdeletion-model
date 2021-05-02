@@ -12,9 +12,12 @@ The pieces:
 [0] https://adriennedomingus.medium.com/soft-deletion-in-django-e4882581c340
 """
 
+from datetime import datetime
+
+
 class SoftDeletionQuerySet(QuerySet):
     def delete(self):
-        return super(SoftDeletionQuerySet, self).update(deleted_at=timezone.now())
+        return super(SoftDeletionQuerySet, self).update(deleted_at=datetime.utcnow())
 
     def hard_delete(self):
         return super(SoftDeletionQuerySet, self).delete()

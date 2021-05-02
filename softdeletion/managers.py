@@ -16,6 +16,9 @@ The pieces:
 [0] https://adriennedomingus.medium.com/soft-deletion-in-django-e4882581c340
 """
 
+from softdeletion.querysets import SoftDeletionQuerySet
+
+
 class SoftDeletionManager(models.Manager):
     def __init__(self, *args, **kwargs):
         self.alive_only = kwargs.pop('alive_only', True)

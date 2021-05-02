@@ -23,6 +23,8 @@ This usually won’t be exposed to users, but could only be called by developers
 [1] https://docs.djangoproject.com/en/1.11/topics/db/models/#abstract-base-classes
 """
 
+from softdeletion.managers import SoftDeletionManager
+
 
 class SoftDeletionModel(models.Model):
     deleted_at = models.DateTimeField(blank=True, null=True)
@@ -34,7 +36,7 @@ class SoftDeletionModel(models.Model):
         abstract = True
 
     def delete(self):
-        self.deleted_at = timezone.now()
+        self.deleted_at = datetime.utcnow()
         self.save()
 
     def hard_delete(self):
